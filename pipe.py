@@ -15,6 +15,8 @@ try:
 except ImportError:
     import __builtin__ as builtins
 
+from parallelepiped import Parallelepiped
+
 
 __author__ = 'Julien Palard <julien@eeple.fr>'
 __credits__ = """Jerome Schneider, for its Python skillz,
@@ -30,6 +32,7 @@ __all__ = [
     'chain_with', 'islice', 'izip', 'passed', 'index', 'strip',
     'lstrip', 'rstrip', 'run_with', 't', 'to_type', 'transpose',
     'dedup', 'uniq',
+    'Parallelepiped'
 ]
 
 
