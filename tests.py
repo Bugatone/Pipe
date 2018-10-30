@@ -27,6 +27,19 @@ class TestPipes(unittest.TestCase):
         self.assertEqual(l0, l1)
         self.assertEqual(l0, l2)
 
+    def test_right_or(self):
+        ror_piped = (range(100) | where(lambda x: x % 2 == 1)
+                                | select(lambda x: x ** 2)
+                                | select(lambda x: x - 1)
+                                | where(lambda x: x < 50))
+
+        or_pipe = (where(lambda x: x % 2 == 1) | select(lambda x: x ** 2)
+                                               | select(lambda x: x - 1)
+                                               | where(lambda x: x < 50))
+
+        lror = list(ror_piped)
+        lor = list(range(100) | or_pipe)
+        self.assertEqual(lror, lor)
 
 if __name__ == '__main__':
     unittest.main()

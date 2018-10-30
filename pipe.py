@@ -60,6 +60,9 @@ class Pipe:
     def __ror__(self, other):
         return self.function(other)
 
+    def __or__(self, other):
+        return Pipe(lambda iterable: iterable | self | other)
+
     def __call__(self, *args, **kwargs):
         return Pipe(lambda x: self.function(x, *args, **kwargs))
 
