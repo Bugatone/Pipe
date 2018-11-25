@@ -26,7 +26,19 @@ def map_conjugate(mapper, mapping):
 
 
 class Parallelepiped(object):
+    """
+    A pipeable parallelization tool.
+
+    `Parallelpiped() | a | b` is a Pipe-compliant object that is equivalent to
+    `a | b` but distributes the computation over the inputs.
+    """
     def __init__(self, pool=None, function=None, ordered=True):
+        """
+        :param None|Pool pool: if not specified, a new Pool is created.
+        :param function: leave empty
+        :param bool ordered: if False, the LIFO order is not guaranteed, but
+        there may be performance benefits.
+        """
         if pool is None:
             pool = Pool()
         self.pool = pool
