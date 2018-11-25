@@ -7,7 +7,7 @@ with open('README.md') as readme_file:
 
 setup(
     name='pipe',
-    py_modules=['pipe'],
+    packages=['pipe'],
     version='1.4.2',
     description='Module enablig a sh like infix syntax (using pipes)',
     author='Julien Palard',

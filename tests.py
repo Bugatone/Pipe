@@ -1,7 +1,5 @@
 import unittest
-from pipe import select, where, concat
-
-from parallelepiped import Parallelepiped
+from pipe import Parallelepiped, select, where, concat
 
 
 class TestPipes(unittest.TestCase):
